@@ -4,13 +4,12 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-username/my-gradle-app.git'
+                git 'https://github.com/kaushikd25/myGradleApp2.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'chmod +x gradlew'
                 sh './gradlew build'
             }
         }
