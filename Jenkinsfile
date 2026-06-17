@@ -10,14 +10,22 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh './gradlew build'
+                sh 'gradlew build'
             }
         }
 
         stage('Run') {
             steps {
-                sh './gradlew run'
+                sh 'gradlew run'
             }
         }
+        post {
+            success {
+                echo "Build and deployment successful!"
+            }
+            failure {
+                echo "Build failed"
+            }
+        
     }
 }
